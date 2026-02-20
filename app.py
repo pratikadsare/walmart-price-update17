@@ -8,8 +8,8 @@ import pandas as pd
 import streamlit as st
 from openpyxl import load_workbook
 
-st.set_page_config(page_title="Walmart Price Update Tool (Bulk + Status)", layout="wide")
-st.title("Walmart Price Update Tool (Bulk + Status)")
+st.set_page_config(page_title="Walmart Price Update Tool", layout="wide")
+st.title("Walmart Price Update Tool")
 
 TEMPLATE_PATH = Path("templates/walmart_price_template.xlsx")
 
@@ -185,7 +185,7 @@ with st.sidebar:
     else:
         st.write("CSV source ready")
 
-st.markdown("### 1) Choose number of rows")
+st.markdown("### 1) Choose number of SKU's")
 row_count = st.number_input("Rows", min_value=1, max_value=MAX_ROWS, value=10, step=1)
 st.caption("Tip: Copy 2 columns (SKU and New Price) from Excel and paste directly into the table.")
 
